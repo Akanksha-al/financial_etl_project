@@ -1,0 +1,21 @@
+ETL Run Report — 2026-04-27 15:54:32
+============================================================
+
+The ETL pipeline processed the real-world Indian bank transactions dataset.
+A total of 100 records were successfully loaded into the SQLite database.
+
+Data quality issues detected and resolved:
+  - NULLS: {'balance': 1, 'amount': 1}
+  - NEGATIVE_BALANCE: 9
+  - STATUS_CASING: ['completed', 'failed', 'Completed', 'COMPLETED', 'pending', 'Pending', 'PENDING']
+  - FAILED_TXN: 10
+  - OUTLIERS: 2
+
+Key statistics from cleaned data:
+  - Average transaction amount : Rs 4,332.91
+  - Transaction types          : {'deposit': 46, 'transfer': 22, 'withdrawal': 32}
+  - Risk distribution          : {'HIGH': 11, 'LOW': 77, 'MEDIUM': 12}
+  - Status breakdown           : {'Completed': 84, 'Failed': 10, 'Pending': 6}
+
+Pipeline completed in 0.95 seconds.
+Recommendation: Schedule this pipeline daily and add email alerts for HIGH-risk transactions.
